@@ -1,0 +1,113 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Testing</title>
+</head>
+
+<body>
+<div align="center">
+
+ 					{% if act=="1" %}
+					   <h4>Test Image</h4>
+					   <img src="../static/dataset/{{fn}}" width="150" height="150">
+					   
+					    <script>
+						//Using setTimeout to execute a function after 5 seconds.
+						setTimeout(function () {
+						   //Redirect with JavaScript
+						  window.location.href="/test_pro2?act=2";
+						}, 5000);
+						</script> 
+					{% elif act=="2" %}
+					   <h4>Noice Filter</h4>
+					   <img src="../static/trained/ns_{{fn}}" width="150" height="150">
+					   
+					    <script>
+						//Using setTimeout to execute a function after 5 seconds.
+						setTimeout(function () {
+						   //Redirect with JavaScript
+						  window.location.href="/test_pro2?act=3";
+						}, 5000);
+						</script> 
+					{% elif act=="3" %}
+					   <h4>Binarization</h4>
+					   <img src="../static/trained/bb/bin_{{fn}}" width="150" height="150">
+					   
+					    <script>
+						//Using setTimeout to execute a function after 5 seconds.
+						setTimeout(function () {
+						   //Redirect with JavaScript
+						  window.location.href="/test_pro2?act=4";
+						}, 5000);
+						</script> 
+					{% elif act=="4" %}
+					   <h4>Segmentation</h4>
+					   <img src="../static/trained/sg/{{fn2}}" width="150" height="150">
+					   
+					    <script>
+						//Using setTimeout to execute a function after 5 seconds.
+						setTimeout(function () {
+						   //Redirect with JavaScript
+						  window.location.href="/test_pro2?act=5";
+						}, 5000);
+						</script> 
+					{% elif act=="5" %}
+					   <h4>Feature Extraction</h4>
+					   <img src="../static/trained/cc/{{fn2}}" width="150" height="150">
+					   
+					    <script>
+						//Using setTimeout to execute a function after 5 seconds.
+						setTimeout(function () {
+						   //Redirect with JavaScript
+						  window.location.href="/test_pro2?act=6";
+						}, 5000);
+						</script>
+					{% elif act=="6" %}
+					<h3>Result</h3>
+					   <h4>Objection Detection - Yolo</h4>
+					  
+					  {% if ts=="4" %}
+					  
+					  <h3 style="color:#009933">{{res}}</h3>
+					  <img src="../static/dataset/{{fn}}" width="150" height="150">
+					   {% elif ts=="2" %}
+					   <h3 style="color:#009933">Manhole Opened</h3>
+					   <img src="../static/trained/classify/{{fn2}}" width="150" height="150">
+					   <iframe src="http://iotcloud.co.in/testsms/sms.php?sms=emr&name=Municipality&mess={{mess}}&mobile={{mobile}}" width="10" height="10" frameborder="0"></iframe>
+					   <p style="color:#FF6600">Complaint and Location has sent to Municipality</p>
+					   {% elif ts=="3" %}
+					   <h3 style="color:#FF3300">Manhole Broken!</h3>
+					   <img src="../static/trained/classify/{{fn2}}" width="150" height="150">
+					   <iframe src="http://iotcloud.co.in/testsms/sms.php?sms=emr&name=Municipality&mess={{mess}}&mobile={{mobile}}" width="10" height="10" frameborder="0"></iframe>
+					   <p style="color:#FF6600">Complaint and Location has sent to Municipality</p>
+					   {% elif ts=="5" %}
+					   <h3 style="color:#FF3300">Person Detected in Manhole</h3>
+					   <img src="../static/trained/classify/{{fn2}}" width="150" height="150">
+					   <iframe src="http://iotcloud.co.in/testsms/sms.php?sms=emr&name=Municipality&mess={{mess}}&mobile={{mobile}}" width="10" height="10" frameborder="0"></iframe>
+					   <p style="color:#FF6600">Complaint and Location has sent to Municipality</p>
+					   {% elif ts=="6" %}
+					   <h3 style="color:#FF3300">Overflow in Manhole</h3>
+					   <img src="../static/trained/classify/{{fn2}}" width="150" height="150">
+					   <iframe src="http://iotcloud.co.in/testsms/sms.php?sms=emr&name=Municipality&mess={{mess}}&mobile={{mobile}}" width="10" height="10" frameborder="0"></iframe>
+					   <p style="color:#FF6600">Complaint and Location has sent to Municipality</p>
+					   {% else %}
+					   <img src="../static/trained/classify/{{fn2}}" width="150" height="150">
+					   <h3 style="color:#FF0000">Manhole Closed!</h3>
+					   
+					   {% endif %}
+					   
+					   
+					  
+					
+					    <script>
+						//Using setTimeout to execute a function after 5 seconds.
+						//setTimeout(function () {
+						   //Redirect with JavaScript
+						//  window.location.href="/test_pro2?act=4";
+						//}, 5000);
+						</script>  
+					   {% endif %}
+
+</div>
+</body>
+</html>
